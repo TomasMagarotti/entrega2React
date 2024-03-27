@@ -1,22 +1,17 @@
-import React, { useState } from 'react'
-import { Button, Heading } from '@chakra-ui/react'
+import React from 'react'
+
 import './ItemCount.css'
 
-const ItemCount = () => {
-    const [ count, setCount] = useState (1)
 
-const incrementar = () => {
-    setCount(count + 1)
-} 
-const decrementar = () => {
-    setCount(count - 1)
-}
+const ItemCount = (stock, initialValue) => {
 
+  const { count, incrementar, decrementar } = useCounter(stock, initialValue)
+  
   return (
-    <div>
-        <Button onClick={decrementar}>-</Button>
-        <Heading>{count}</Heading>
-        <Button onClick={incrementar}>+</Button>
+    <div className='counterContainer'>
+        <button onClick={decrementar}>-</button>
+        <h2>{count}</h2>
+        <button onClick={incrementar}>+</button>
     </div>
   )
 }
