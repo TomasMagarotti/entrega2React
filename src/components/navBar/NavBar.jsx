@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, MenuButton, MenuList, MenuItem, Button} from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, MenuItem, Button, Heading} from '@chakra-ui/react'
 import { AiFillCaretDown } from "react-icons/ai";
 import CartWidget from '../cartWidget/CartWidget';
 import './NavBar.css'
@@ -19,7 +19,7 @@ const NavBar = () => {
       <MenuItem>Remeras</MenuItem>
       <MenuItem>Pantalones</MenuItem>
       <MenuItem>Camperas</MenuItem>
-      <MenuItem>Accesorios</MenuItem>
+      <MenuItem>Zapatillas</MenuItem>
       </MenuList>
   </Menu>
   <CartWidget/>

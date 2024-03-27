@@ -4,7 +4,7 @@ import React from 'react'
 const ItemListContainer = ({title}) => {
   return (
     <div>
-      <Heading> {title} </Heading>
+      <Heading>{title}</Heading>
     </div>
   )
 }
