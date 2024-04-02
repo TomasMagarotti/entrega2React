@@ -12,6 +12,7 @@ import {
   Divider,
   Text,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const Item = ({ image, nombre, precio, id, descripcion }) => {
   return (
@@ -30,7 +31,7 @@ const Item = ({ image, nombre, precio, id, descripcion }) => {
       <CardFooter>
         <ButtonGroup spacing="2">
           <Button variant="solid" colorScheme="blue">
-            Ver detalle
+            <Link to = {`/product/${id}`}>Ver detalle</Link>
           </Button>
         </ButtonGroup>
       </CardFooter>

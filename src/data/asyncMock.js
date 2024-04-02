@@ -54,3 +54,13 @@ export const getProductsByCategory = (category) => {
     }, 2000);
   });
 };
+
+export const getProductById = (id) => {
+  return new Promise ((resolve) => {
+    const productoFiltrado = productos.find ((el) => el.id === parseInt(id));
+    setTimeout(() => {
+      resolve(productoFiltrado);
+    }, 2000)
+    resolve(productoFiltrado);
+  } )
+}

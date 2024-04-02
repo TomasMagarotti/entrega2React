@@ -1,30 +1,50 @@
-import React from 'react'
-import { Menu, MenuButton, MenuList, MenuItem, Button, Heading, Link} from '@chakra-ui/react'
+import React from "react";
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Button,
+  Heading,
+  
+} from "@chakra-ui/react";
 import { AiFillCaretDown } from "react-icons/ai";
-import CartWidget from '../cartWidget/CartWidget';
-import './NavBar.css'
-
+import CartWidget from "../cartWidget/CartWidget";
+import "./NavBar.css";
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
-    <div className='navbar'>
-        <div>
-            <img src="./src/assets/logo-proyecto.jpeg" style={ {width : "90px" }} alt="logo de la marca" />
-        </div>
-    <Menu>
-    <MenuButton as={Button} rightIcon={<AiFillCaretDown />}>
-      Productos
-    </MenuButton>
-    <MenuList>
-      <MenuItem><Link to={'/category/Remeras'}></Link>Remeras</MenuItem>
-      <MenuItem><Link to={'/category/Pantalones'}></Link>Pantalones</MenuItem>
-      <MenuItem><Link to={'category/Camperas'}></Link>Camperas</MenuItem>
-      <MenuItem><Link to={'category/Zapatillas'}></Link>Zapatillas</MenuItem>
-      </MenuList>
-  </Menu>
-  <CartWidget/>
-  </div>
-  )
-}
+    <div className="navbar">
+      <div>
+        <img
+          src="./src/assets/logo-proyecto.jpeg"
+          style={{ width: "90px" }}
+          alt="logo de la marca"
+        />
+      </div>
+      <Menu>
+        <MenuButton as={Button} rightIcon={<AiFillCaretDown />}>
+          Productos
+        </MenuButton>
+        <MenuList>
+          <MenuItem>
+            <Link to={"/category/Remeras"}>Remeras</Link>
+          </MenuItem>
+          <MenuItem>
+            <Link to={"/category/Pantalones"}>Pantalones</Link>
+          </MenuItem>
+          <MenuItem>
+            <Link to={"/category/Camperas"}>Camperas</Link>
+          </MenuItem>
+          <MenuItem>
+            <Link to={"/category/Zapatillas"}>Zapatillas</Link>
+          </MenuItem>
+        </MenuList>
+      </Menu>
+      <CartWidget />
+    </div>
+  );
+};
 
-export default NavBar
+export default NavBar;
