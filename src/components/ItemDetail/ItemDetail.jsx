@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import ItemCount from "../itemCount/ItemCount";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardHeader,
@@ -13,7 +15,26 @@ import {
   Image,
   Button,
 } from "@chakra-ui/react";
-const ItemDetail = ({ categoria, descripcion, image, nombre, precio }) => {
+import Item from "../item/Item";
+import Context from "../../context/CartContext"
+
+
+const ItemDetail = ({ categoria, descripcion, image, nombre, precio, stock, id }) => {
+    const [ cantidad, setCantidad ] = useState(0)
+    const { addItem } = useContext(Context)
+    const onAdd = (quantity) => {
+
+      const item = {
+        id,
+        stock,
+        nombre,
+        precio
+      }
+      addItem(item, quantity)
+      setCantidad(quantity)
+    }
+
+
   return (
     <Card maxW="md">
       <CardHeader>
@@ -37,6 +58,7 @@ const ItemDetail = ({ categoria, descripcion, image, nombre, precio }) => {
       <CardBody>
         <Text>{descripcion}</Text>
         <Text>$ {precio}</Text>
+        <Text>Stock disponible: {stock} </Text>
       </CardBody>
       <Image objectFit="cover" src={image} alt="Chakra UI" />
 
@@ -49,6 +71,11 @@ const ItemDetail = ({ categoria, descripcion, image, nombre, precio }) => {
           },
         }}
       ></CardFooter>
+      {
+        cantidad > 0 ?
+        <Link to='/cart'>Ir al carrito</Link> :
+        <ItemCount stock={stock} initialValue={1} onAdd={onAdd} />
+      }
     </Card>
   );
 };

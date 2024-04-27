@@ -6,6 +6,7 @@ import {
   MenuItem,
   Button,
   Heading,
+  Box,
   
 } from "@chakra-ui/react";
 import { AiFillCaretDown } from "react-icons/ai";
@@ -23,6 +24,8 @@ const NavBar = () => {
           alt="logo de la marca"
         />
       </div>
+    
+      <Heading className="nav"><Link to='/'>Tienda</Link> </Heading>
       <Menu>
         <MenuButton as={Button} rightIcon={<AiFillCaretDown />}>
           Productos
@@ -44,6 +47,7 @@ const NavBar = () => {
       </Menu>
       <CartWidget />
     </div>
+   
   );
 };
 

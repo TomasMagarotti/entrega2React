@@ -1,11 +1,14 @@
 .counterContainer {
-    width: 10rem;
+   
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.counterContainer button {
-    height: 3rem;
-    width: 3rem;
+.counterContainer .btnCounter {
+    height: 2rem;
+    width: 2rem;
+    background-color: brown;
+}
+.counterContainer .btnCarrito {
     background-color: brown;
 }

@@ -11,31 +11,35 @@ import {
   ButtonGroup,
   Divider,
   Text,
+  Box,
+  Flex
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const Item = ({ image, nombre, precio, id, descripcion }) => {
   return (
+   
     <Card maxW="sm">
       <CardBody>
-        <Image src={image} alt={nombre} borderRadius="lg" />
+        <Image src={image} alt={nombre} borderRadius="md" boxSize='100%' objectFit='cover'/>
         <Stack mt="6" spacing="3">
-          <Heading size="md">{nombre}</Heading>
-          <Text>{descripcion}</Text>
-          <Text color="blue.600" fontSize="2xl">
+          <Heading align={'center'} size="md">{nombre}</Heading>
+          <Text align={'center'}>{descripcion}</Text>
+          <Text align={'center'} color="blue.600" fontSize="2xl">
             ${precio}
           </Text>
         </Stack>
       </CardBody>
       <Divider />
       <CardFooter>
-        <ButtonGroup spacing="2">
-          <Button variant="solid" colorScheme="blue">
+        <Flex spacing="2" justify={'center'} align={'center'} >
+          <Button justify={'center'} align={'center'} variant="solid" colorScheme="blue">
             <Link to = {`/product/${id}`}>Ver detalle</Link>
           </Button>
-        </ButtonGroup>
+        </Flex>
       </CardFooter>
     </Card>
+    
   );
 };
 
